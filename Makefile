@@ -24,10 +24,10 @@ GDB     = $(TCPREFIX)gdb
 
 # -mfix-cortex-m3-ldrd should be enabled by default for Cortex M3.
 # CFLAGS -H show header files
-AFLAGS  = -Igeneric-electric-unicycle/firmware/src -Igeneric-electric-unicycle/firmware/src/spl/CMSIS -Igeneric-electric-unicycle/firmware/src/spl/inc -c -g -mcpu=cortex-m3 -mthumb 
-CFLAGS  = -Igeneric-electric-unicycle/firmware/src -Igeneric-electric-unicycle/firmware/src/spl/CMSIS -Igeneric-electric-unicycle/firmware/src/spl/CMSIS/inc -Igeneric-electric-unicycle/firmware/src/spl/inc -mfloat-abi=soft -msoft-float -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -c -fno-common -O0 -g -mcpu=cortex-m3 -mthumb
-LFLAGS  = -Tgeneric-electric-unicycle/firmware/src/stm32_flash.ld -L/usr/lib/gcc/arm-none-eabi/4.9.3 -lgcc -nostartfiles
-CPFLAGS = -Obinary
+AFLAGS  = -Igeneric-electric-unicycle/firmware/src -Igeneric-electric-unicycle/firmware/src/spl/CMSIS -Igeneric-electric-unicycle/firmware/src/spl/inc -c -g -mcpu=cortex-m3 -mthumb
+CFLAGS  = -Igeneric-electric-unicycle/firmware/src -Igeneric-electric-unicycle/firmware/src/spl/CMSIS -Igeneric-electric-unicycle/firmware/src/spl/CMSIS/inc -Igeneric-electric-unicycle/firmware/src/spl/inc -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -c -fno-common -O0 -g -mcpu=cortex-m3 -mthumb
+LFLAGS  = -Tgeneric-electric-unicycle/firmware/src/stm32_flash.ld -L/usr/lib/gcc/arm-none-eabi/4.9.3/armv7-m -lgcc -nostartfiles
+CPFLAGS = -Obinary 
 ODFLAGS = -S
 
 SOURCES=$(shell find generic-electric-unicycle/firmware/src -type f -iname '*.c')
